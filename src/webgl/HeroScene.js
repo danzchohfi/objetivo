@@ -39,7 +39,7 @@ export default class HeroScene {
       return;
     }
 
-    this.renderer.setClearColor(0x0a0a0c, 1);
+    this.renderer.setClearColor(0x0d0d0f, 1);
     this.renderer.setPixelRatio(this.dpr);
 
     this.scene = new THREE.Scene();
@@ -51,10 +51,10 @@ export default class HeroScene {
       uMouse: { value: new THREE.Vector2(0, 0) },
       uScroll: { value: 0 },
       uReveal: { value: 0 },
-      uInk: { value: hexToVec3('#0a0a0c') },
-      uFlare: { value: hexToVec3('#ff5a1f') },
-      uIon: { value: hexToVec3('#6f7bff') },
-      uEmber: { value: hexToVec3('#7a1f00') },
+      uInk: { value: hexToVec3('#0d0d0f') },
+      uFlare: { value: hexToVec3('#A6E22E') },
+      uIon: { value: hexToVec3('#16240a') },
+      uEmber: { value: hexToVec3('#2c4710') },
     };
 
     const geometry = new THREE.PlaneGeometry(2, 2);

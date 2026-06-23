@@ -4,8 +4,9 @@ Uma experiência web de alto nível para a agência **Objetivo Marketing**, cons
 do zero com foco em micro-animações, interatividade e uma identidade visual forte —
 estilo *Awwwards* — sem abrir mão de UX, acessibilidade e performance.
 
-Conceito: **"Acertamos o seu objetivo"** — a palavra *objetivo* significa alvo/meta,
-e isso vira o fio condutor visual (mira, precisão, anéis concêntricos de um alvo).
+Conceito: **"Transforme cliques em lucro"** — agência de **tráfego pago** (Google Ads,
+Meta Ads, TikTok Ads e consultoria). A marca é **preto + verde-limão `#C6F94D`**, e o
+nome *Objetivo* vira o fio condutor visual: mira, precisão, anéis concêntricos de um alvo.
 
 ## ✨ Destaques
 
@@ -30,7 +31,7 @@ e isso vira o fio condutor visual (mira, precisão, anéis concêntricos de um a
 | Animação          | [GSAP](https://gsap.com) + ScrollTrigger |
 | Scroll suave      | [Lenis](https://lenis.darkroom.engineering) |
 | Split de texto    | [SplitType](https://github.com/lukePeavey/SplitType) |
-| Tipografia        | Clash Display + General Sans ([Fontshare](https://fontshare.com)) |
+| Tipografia        | Hanken Grotesk ([Google Fonts](https://fonts.google.com)) |
 
 ## 🚀 Como rodar
 
@@ -63,9 +64,10 @@ vercel.json              # deploy estático (framework Vite)
 
 ## 📝 Observação sobre o conteúdo
 
-Números, cases, depoimentos e dados de contato são **placeholders realistas** para
-demonstrar a experiência — substitua pelos dados oficiais da agência antes de publicar
-(e-mail, telefone, endereço, redes sociais e projetos reais).
+Conteúdo, serviços, planos, FAQ e contato foram extraídos do site atual da Objetivo
+Marketing (Google Ads / Meta Ads / TikTok Ads, planos Prata/Ouro/Diamante, WhatsApp
+(48) 99831-3601 e contato@objetivomarketing.com.br). Falta apenas preencher os links
+reais de Instagram/YouTube e a imagem real do vídeo do hero, se desejar.
 
 ## ☁️ Deploy
 

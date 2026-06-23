@@ -102,11 +102,11 @@ export const fragmentShader = /* glsl */ `
     float d = length(c);
     float rings = sin(d * 26.0 - uTime * 0.7);
     rings = smoothstep(0.5, 1.0, rings) * smoothstep(0.95, 0.05, d);
-    col += rings * uFlare * 0.07;
+    col += rings * uFlare * 0.05;
 
-    // soft bullseye bloom
+    // soft bullseye bloom (lime is bright — keep it restrained)
     float glow = smoothstep(0.6, 0.0, d);
-    col += glow * uFlare * 0.18 * (0.65 + 0.35 * sin(uTime * 0.5));
+    col += glow * uFlare * 0.12 * (0.65 + 0.35 * sin(uTime * 0.5));
 
     // vignette
     float vig = smoothstep(1.4, 0.12, length(p));

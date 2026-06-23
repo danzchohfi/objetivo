@@ -1,6 +1,7 @@
 import './styles/base.css';
 import './styles/ui.css';
 import './styles/sections.css';
+import './styles/components.css';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,6 +18,7 @@ import { initCounters } from './modules/counters.js';
 import { initServices } from './modules/services.js';
 import { initWorks } from './modules/works.js';
 import { initQuotes } from './modules/quotes.js';
+import { initFaq } from './modules/faq.js';
 import { initScramble } from './modules/scramble.js';
 import { initMisc } from './modules/misc.js';
 
@@ -77,6 +79,7 @@ function boot() {
   initNav(gsap, ScrollTrigger, lenis);
   initMarquees(gsap, lenis);
   initQuotes();
+  initFaq(gsap);
   initScramble();
   initMisc(gsap, ScrollTrigger, lenis);
 

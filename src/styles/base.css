@@ -3,27 +3,28 @@
    ========================================================= */
 
 :root {
-  /* — Palette — */
-  --ink:        #0a0a0c;
-  --ink-2:      #0f0f13;
-  --ink-3:      #16161c;
-  --ink-soft:   #1c1c24;
-  --bone:       #ece6db;
-  --bone-2:     #c9c3b8;
-  --bone-dim:   rgba(236, 230, 219, 0.56);
-  --bone-faint: rgba(236, 230, 219, 0.12);
-  --line:       rgba(236, 230, 219, 0.14);
-  --line-soft:  rgba(236, 230, 219, 0.08);
+  /* — Palette · Objetivo Marketing (preto + verde-limão) — */
+  --ink:        #0D0D0F;   /* fundo near-black */
+  --ink-2:      #161619;   /* cards / elevado */
+  --ink-3:      #1d1d21;
+  --ink-soft:   #232328;
+  --bone:       #FAFAF7;   /* texto branco */
+  --bone-2:     rgba(250, 250, 247, 0.66);  /* secundário */
+  --bone-dim:   rgba(250, 250, 247, 0.42);  /* apagado */
+  --bone-faint: rgba(250, 250, 247, 0.12);
+  --line:       rgba(250, 250, 247, 0.14);
+  --line-soft:  rgba(250, 250, 247, 0.08);
 
-  --flare:      #ff5a1f;   /* primary accent */
-  --flare-2:    #ff8a3d;
-  --ember:      #e0330f;
-  --ion:        #6f7bff;    /* cool counterpoint */
-  --mint:       #54e0c7;
+  --flare:      #C6F94D;   /* verde-limão · acento da marca */
+  --flare-2:    #D6FB76;
+  --ember:      #9FE02C;   /* limão mais profundo (gradientes) */
+  --ion:        #1a2b08;   /* verde escuro (WebGL depth) */
+  --mint:       #C6F94D;   /* estados funcionais */
+  --on-flare:   #0D0D0F;   /* texto sobre o limão */
 
   /* — Type — */
-  --font-display: "Clash Display", "Arial Black", sans-serif;
-  --font-sans: "General Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Hanken Grotesk", system-ui, "Segoe UI", Arial, sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
 
   /* — Fluid scale (clamp: min, fluid, max) — */
@@ -219,8 +220,8 @@ body::before {
   z-index: -3;
   pointer-events: none;
   background:
-    radial-gradient(120% 90% at 80% 8%, rgba(255, 90, 31, 0.16), transparent 55%),
-    radial-gradient(120% 100% at 12% 100%, rgba(111, 123, 255, 0.12), transparent 55%),
+    radial-gradient(120% 90% at 80% 8%, rgba(198, 249, 77, 0.12), transparent 55%),
+    radial-gradient(120% 100% at 12% 100%, rgba(159, 224, 44, 0.08), transparent 55%),
     var(--ink);
 }
 
