@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0c" />
+
+  <title>Objetivo Marketing — Acertamos o seu objetivo</title>
+  <meta name="description" content="Objetivo Marketing é a agência que une estratégia, criação e performance para acertar o objetivo da sua marca. Branding, tráfego pago, social, sites e conteúdo que geram resultado." />
+  <meta name="author" content="Objetivo Marketing" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Objetivo Marketing — Acertamos o seu objetivo" />
+  <meta property="og:description" content="Estratégia, criação e performance que acertam o objetivo da sua marca." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://objetivomarketing.com.br" />
+  <meta property="og:image" content="https://objetivomarketing.com.br/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://objetivomarketing.com.br/og.png" />
+
+  <link rel="canonical" href="https://objetivomarketing.com.br" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Fontshare (Clash Display + General Sans) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap"
+  />
+
+  <script>
+    // Set early flags to avoid layout flash + provide a no-JS fallback.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      d.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+      if (matchMedia('(hover: none)').matches) d.classList.add('is-touch');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced-motion');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MarketingAgency",
+      "name": "Objetivo Marketing",
+      "url": "https://objetivomarketing.com.br",
+      "description": "Agência de marketing, branding e performance.",
+      "areaServed": "BR",
+      "slogan": "Acertamos o seu objetivo"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- ====================== PRELOADER ====================== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__brand">
+        <span class="preloader__word" data-pl-word>OBJETIVO</span>
+      </div>
+      <div class="preloader__meta">
+        <span class="preloader__tag" data-pl-fade>Agência de marketing &amp; performance</span>
+        <span class="preloader__count"><span id="pl-count">0</span><i>%</i></span>
+      </div>
+      <div class="preloader__bar"><span class="preloader__bar-fill" id="pl-bar"></span></div>
+    </div>
+  </div>
+
+  <!-- ====================== CUSTOM CURSOR ====================== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring" id="cursor-ring"></div>
+    <div class="cursor__dot" id="cursor-dot"></div>
+    <span class="cursor__label" id="cursor-label"></span>
+  </div>
+
+  <!-- ====================== SCROLL PROGRESS ====================== -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <!-- ====================== WEBGL CANVAS ====================== -->
+  <canvas class="webgl" id="webgl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#manifesto">Pular para o conteúdo</a>
+
+  <!-- ====================== HEADER / NAV ====================== -->
+  <header class="header" id="header">
+    <a class="header__logo" href="#top" data-magnetic data-cursor="O" aria-label="Objetivo Marketing — início">
+      <span class="header__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+          <circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1.4" opacity=".8"/>
+          <circle cx="20" cy="20" r="4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="header__logo-type">Objetivo</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navegação principal">
+      <a href="#servicos" class="header__link" data-scramble>Serviços</a>
+      <a href="#metodo" class="header__link" data-scramble>Método</a>
+      <a href="#trabalhos" class="header__link" data-scramble>Trabalhos</a>
+      <a href="#sobre" class="header__link" data-scramble>Sobre</a>
+    </nav>
+
+    <a href="#contato" class="btn btn--pill header__cta" data-magnetic data-cursor="Vamos?">
+      <span>Vamos conversar</span>
+      <i class="btn__arrow" aria-hidden="true">→</i>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ====================== FULLSCREEN MENU ====================== -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__bg" aria-hidden="true"></div>
+    <div class="menu__inner">
+      <nav class="menu__nav" aria-label="Menu">
+        <a href="#top"        class="menu__link" data-cursor="Início"><span class="menu__index">01</span><span class="menu__text">Início</span></a>
+        <a href="#servicos"   class="menu__link" data-cursor="Ver"><span class="menu__index">02</span><span class="menu__text">Serviços</span></a>
+        <a href="#metodo"     class="menu__link" data-cursor="Ver"><span class="menu__index">03</span><span class="menu__text">Método</span></a>
+        <a href="#trabalhos"  class="menu__link" data-cursor="Ver"><span class="menu__index">04</span><span class="menu__text">Trabalhos</span></a>
+        <a href="#sobre"      class="menu__link" data-cursor="Ver"><span class="menu__index">05</span><span class="menu__text">Sobre</span></a>
+        <a href="#contato"    class="menu__link" data-cursor="Falar"><span class="menu__index">06</span><span class="menu__text">Contato</span></a>
+      </nav>
+      <div class="menu__aside">
+        <div class="menu__block">
+          <span class="label">Atendimento</span>
+          <a href="mailto:contato@objetivomarketing.com.br" class="menu__contact">contato@objetivomarketing.com.br</a>
+          <a href="tel:+5511999999999" class="menu__contact">+55 11 99999-9999</a>
+        </div>
+        <div class="menu__block">
+          <span class="label">Social</span>
+          <div class="menu__social">
+            <a href="#" data-scramble>Instagram</a>
+            <a href="#" data-scramble>LinkedIn</a>
+            <a href="#" data-scramble>Behance</a>
+            <a href="#" data-scramble>YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero" aria-label="Apresentação">
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal-up" data-pl-hero>
+          <span class="dot" aria-hidden="true"></span>
+          Agência de marketing &amp; performance — desde 2009
+        </p>
+
+        <h1 class="hero__title">
+          <span class="line"><span class="line__inner" data-hero-line>Acertamos</span></span>
+          <span class="line"><span class="line__inner" data-hero-line>o&nbsp;seu</span></span>
+          <span class="line"><span class="line__inner" data-hero-line><em>objetivo</em></span></span>
+        </h1>
+
+        <div class="hero__foot">
+          <p class="hero__lede reveal-up" data-pl-hero>
+            Estratégia, criação e mídia que trabalham juntas para transformar
+            atenção em resultado — e resultado em crescimento.
+          </p>
+          <a href="#manifesto" class="hero__scroll" data-cursor="Role" aria-label="Rolar para baixo">
+            <span class="hero__scroll-line" aria-hidden="true"></span>
+            <span>Role para descobrir</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__corner hero__corner--tr" aria-hidden="true">
+        <span class="label">[ S&atilde;o Paulo — BR ]</span>
+        <span class="label" id="local-time">--:--:--</span>
+      </div>
+    </section>
+
+    <!-- ====================== MARQUEE ====================== -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee data-marquee-dir="1">
+        <span>Branding</span><i>✦</i><span>Performance</span><i>✦</i><span>Social Media</span><i>✦</i>
+        <span>Conteúdo</span><i>✦</i><span>Sites &amp; Apps</span><i>✦</i><span>SEO</span><i>✦</i>
+        <span>Branding</span><i>✦</i><span>Performance</span><i>✦</i><span>Social Media</span><i>✦</i>
+        <span>Conteúdo</span><i>✦</i><span>Sites &amp; Apps</span><i>✦</i><span>SEO</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- ====================== MANIFESTO ====================== -->
+    <section class="manifesto section" id="manifesto" aria-label="Manifesto">
+      <span class="section__index label">(01) — Manifesto</span>
+      <p class="manifesto__text" data-words>
+        Marketing sem direção é só ruído. A gente existe para o oposto: cada peça,
+        cada real de mídia e cada palavra com um alvo claro. Unimos dados e ousadia
+        para mirar onde importa e <em>acertar o seu objetivo</em>.
+      </p>
+    </section>
+
+    <!-- ====================== STATS ====================== -->
+    <section class="stats" aria-label="Números">
+      <div class="stats__grid">
+        <div class="stat" data-reveal>
+          <span class="stat__num" data-count="15" data-suffix="+">0</span>
+          <span class="stat__label">anos mirando alto</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num" data-count="320" data-suffix="+">0</span>
+          <span class="stat__label">projetos entregues</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num" data-count="4.7" data-decimals="1" data-suffix="x">0</span>
+          <span class="stat__label">ROI médio em mídia</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num" data-count="98" data-suffix="%">0</span>
+          <span class="stat__label">clientes que renovam</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== SERVICES ====================== -->
+    <section class="services section" id="servicos" aria-label="Serviços">
+      <header class="services__head">
+        <span class="section__index label">(02) — O que fazemos</span>
+        <h2 class="services__title" data-reveal-lines>
+          Capacidades de ponta a ponta para marcas que querem crescer com intenção.
+        </h2>
+      </header>
+
+      <ul class="svc-list" id="svc-list">
+        <li class="svc" data-svc="01" data-color="#ff5a1f">
+          <a href="#contato" class="svc__row" data-cursor="Ver">
+            <span class="svc__idx">01</span>
+            <span class="svc__name">Estratégia &amp; Branding</span>
+            <span class="svc__desc">Posicionamento, identidade e narrativa que diferenciam a marca.</span>
+            <i class="svc__arrow" aria-hidden="true">→</i>
+          </a>
+        </li>
+        <li class="svc" data-svc="02" data-color="#ff8a3d">
+          <a href="#contato" class="svc__row" data-cursor="Ver">
+            <span class="svc__idx">02</span>
+            <span class="svc__name">Performance &amp; Mídia</span>
+            <span class="svc__desc">Tráfego pago em Google, Meta e TikTok orientado a ROI.</span>
+            <i class="svc__arrow" aria-hidden="true">→</i>
+          </a>
+        </li>
+        <li class="svc" data-svc="03" data-color="#54e0c7">
+          <a href="#contato" class="svc__row" data-cursor="Ver">
+            <span class="svc__idx">03</span>
+            <span class="svc__name">Social &amp; Conteúdo</span>
+            <span class="svc__desc">Gestão, criação e produção que constroem comunidade e desejo.</span>
+            <i class="svc__arrow" aria-hidden="true">→</i>
+          </a>
+        </li>
+        <li class="svc" data-svc="04" data-color="#6f7bff">
+          <a href="#contato" class="svc__row" data-cursor="Ver">
+            <span class="svc__idx">04</span>
+            <span class="svc__name">Sites, Apps &amp; CRO</span>
+            <span class="svc__desc">Experiências digitais rápidas, lindas e feitas para converter.</span>
+            <i class="svc__arrow" aria-hidden="true">→</i>
+          </a>
+        </li>
+        <li class="svc" data-svc="05" data-color="#ffd23f">
+          <a href="#contato" class="svc__row" data-cursor="Ver">
+            <span class="svc__idx">05</span>
+            <span class="svc__name">SEO &amp; Automação</span>
+            <span class="svc__desc">Crescimento orgânico e fluxos que escalam sem perder a mão.</span>
+            <i class="svc__arrow" aria-hidden="true">→</i>
+          </a>
+        </li>
+      </ul>
+      <div class="svc-preview" id="svc-preview" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ====================== MÉTODO / PROCESS ====================== -->
+    <section class="process section" id="metodo" aria-label="Método">
+      <div class="process__intro">
+        <span class="section__index label">(03) — O Método Objetivo</span>
+        <h2 class="process__title" data-reveal-lines>Quatro passos entre a ideia e o alvo.</h2>
+        <p class="process__lede" data-reveal>Um processo enxuto, transparente e obcecado por resultado — você acompanha cada etapa.</p>
+      </div>
+
+      <div class="process__track" id="process-track">
+        <article class="step" data-step>
+          <span class="step__num">01</span>
+          <h3 class="step__title">Diagnóstico</h3>
+          <p class="step__text">Mergulho em dados, mercado e concorrência para encontrar a real oportunidade.</p>
+          <span class="step__tag label">Pesquisa · Dados · Insight</span>
+        </article>
+        <article class="step" data-step>
+          <span class="step__num">02</span>
+          <h3 class="step__title">Estratégia</h3>
+          <p class="step__text">Definimos o alvo, a mensagem e os canais. Objetivos claros, métricas claras.</p>
+          <span class="step__tag label">Posicionamento · Plano · KPIs</span>
+        </article>
+        <article class="step" data-step>
+          <span class="step__num">03</span>
+          <h3 class="step__title">Execução</h3>
+          <p class="step__text">Criação e mídia entram em campo com qualidade de estúdio e velocidade de agência.</p>
+          <span class="step__tag label">Criação · Produção · Mídia</span>
+        </article>
+        <article class="step" data-step>
+          <span class="step__num">04</span>
+          <h3 class="step__title">Otimização</h3>
+          <p class="step__text">Medimos, aprendemos e escalamos o que funciona. Toda semana, mais perto do alvo.</p>
+          <span class="step__tag label">Análise · Testes · Escala</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== TRABALHOS / WORKS ====================== -->
+    <section class="works section" id="trabalhos" aria-label="Trabalhos">
+      <header class="works__head">
+        <span class="section__index label">(04) — Trabalhos selecionados</span>
+        <h2 class="works__title" data-reveal-lines>Resultados que falam mais alto que o briefing.</h2>
+      </header>
+
+      <div class="works__grid">
+        <article class="work" data-tilt data-work="1">
+          <a href="#contato" class="work__media" data-cursor="Case" style="--g1:#ff5a1f;--g2:#7a1f00;">
+            <span class="work__poster">Aurora<br>Cosméticos</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </a>
+          <div class="work__meta">
+            <h3 class="work__name">Aurora Cosméticos</h3>
+            <span class="work__cat label">Branding · E-commerce</span>
+            <span class="work__kpi">+212% receita online</span>
+          </div>
+        </article>
+
+        <article class="work work--tall" data-tilt data-work="2">
+          <a href="#contato" class="work__media" data-cursor="Case" style="--g1:#6f7bff;--g2:#10123a;">
+            <span class="work__poster">Nordi<br>Fintech</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </a>
+          <div class="work__meta">
+            <h3 class="work__name">Nordi Fintech</h3>
+            <span class="work__cat label">Performance · App</span>
+            <span class="work__kpi">CAC −38%</span>
+          </div>
+        </article>
+
+        <article class="work work--tall" data-tilt data-work="3">
+          <a href="#contato" class="work__media" data-cursor="Case" style="--g1:#54e0c7;--g2:#08332b;">
+            <span class="work__poster">Verde<br>Hortifruti</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </a>
+          <div class="work__meta">
+            <h3 class="work__name">Verde Hortifruti</h3>
+            <span class="work__cat label">Social · Conteúdo</span>
+            <span class="work__kpi">1.2M alcance/mês</span>
+          </div>
+        </article>
+
+        <article class="work" data-tilt data-work="4">
+          <a href="#contato" class="work__media" data-cursor="Case" style="--g1:#ffd23f;--g2:#5a3d00;">
+            <span class="work__poster">Cume<br>Construtora</span>
+            <span class="work__shine" aria-hidden="true"></span>
+          </a>
+          <div class="work__meta">
+            <h3 class="work__name">Cume Construtora</h3>
+            <span class="work__cat label">Site · CRO</span>
+            <span class="work__kpi">+76% leads qualificados</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================== DEPOIMENTOS ====================== -->
+    <section class="quotes section" aria-label="Depoimentos">
+      <span class="section__index label">(05) — Quem confia</span>
+      <blockquote class="quote" data-quote data-active>
+        <p>“Pela primeira vez sentimos que a agência estava tão obcecada pela meta quanto a gente. O número apareceu — e continuou aparecendo.”</p>
+        <footer><span>Marina Salles</span> · CMO, Aurora Cosméticos</footer>
+      </blockquote>
+      <blockquote class="quote" data-quote>
+        <p>“Estratégia afiada, execução impecável e total transparência. A Objetivo virou parte do nosso time.”</p>
+        <footer><span>Rafael Lima</span> · Head de Growth, Nordi</footer>
+      </blockquote>
+      <blockquote class="quote" data-quote>
+        <p>“Trouxeram alma de marca e cabeça de performance. Raro, e exatamente o que faltava.”</p>
+        <footer><span>Camila Duarte</span> · Fundadora, Verde Hortifruti</footer>
+      </blockquote>
+      <div class="quotes__nav" role="tablist" aria-label="Selecionar depoimento">
+        <button class="quotes__dot is-active" data-quote-dot aria-label="Depoimento 1"></button>
+        <button class="quotes__dot" data-quote-dot aria-label="Depoimento 2"></button>
+        <button class="quotes__dot" data-quote-dot aria-label="Depoimento 3"></button>
+      </div>
+    </section>
+
+    <!-- ====================== LOGOS ====================== -->
+    <section class="clients" aria-label="Clientes">
+      <div class="clients__marquee" data-marquee data-marquee-dir="-1" aria-hidden="true">
+        <span>AURORA</span><span>NORDI</span><span>VERDE</span><span>CUME</span><span>HÉLIO</span>
+        <span>PRANA</span><span>OBÁ</span><span>LUMINA</span><span>AURORA</span><span>NORDI</span>
+        <span>VERDE</span><span>CUME</span><span>HÉLIO</span><span>PRANA</span><span>OBÁ</span><span>LUMINA</span>
+      </div>
+    </section>
+
+    <!-- ====================== SOBRE ====================== -->
+    <section class="about section" id="sobre" aria-label="Sobre">
+      <span class="section__index label">(06) — Sobre nós</span>
+      <div class="about__grid">
+        <h2 class="about__title" data-reveal-lines>
+          Somos estrategistas, criativos e analistas movidos por uma pergunta: qual é o objetivo?
+        </h2>
+        <div class="about__body">
+          <p data-reveal>Nascemos em São Paulo em 2009 com uma convicção simples — marketing bonito que não move ponteiro é desperdício. Desde então, juntamos times de branding, performance e tecnologia sob o mesmo teto para que estratégia e execução nunca se percam no caminho.</p>
+          <p data-reveal>Trabalhamos com poucas marcas por vez, com profundidade de parceiro e não de fornecedor. O resultado é um jeito raro de fazer agência: ousado na ideia, rigoroso no dado, e sempre, sempre mirando o objetivo.</p>
+          <div class="about__pills" data-reveal>
+            <span class="pill">Time sênior</span>
+            <span class="pill">Dados em primeiro lugar</span>
+            <span class="pill">Transparência total</span>
+            <span class="pill">Feito no Brasil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CTA / CONTATO ====================== -->
+    <section class="cta section" id="contato" aria-label="Contato">
+      <div class="cta__inner">
+        <span class="section__index label">(07) — Vamos começar</span>
+        <h2 class="cta__title">
+          <span class="line"><span class="line__inner" data-reveal-line>Pronto para acertar</span></span>
+          <span class="line"><span class="line__inner" data-reveal-line>o seu <em>objetivo</em>?</span></span>
+        </h2>
+        <a href="mailto:contato@objetivomarketing.com.br" class="cta__btn" data-magnetic data-cursor="Enviar">
+          <span class="cta__btn-bg" aria-hidden="true"></span>
+          <span class="cta__btn-label">Iniciar um projeto</span>
+          <span class="cta__btn-arrow" aria-hidden="true">↗</span>
+        </a>
+        <p class="cta__or">ou diga oi em <a href="mailto:contato@objetivomarketing.com.br" data-scramble>contato@objetivomarketing.com.br</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="footer__top">
+      <div class="footer__col">
+        <span class="label">Navegação</span>
+        <a href="#servicos" data-scramble>Serviços</a>
+        <a href="#metodo" data-scramble>Método</a>
+        <a href="#trabalhos" data-scramble>Trabalhos</a>
+        <a href="#sobre" data-scramble>Sobre</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Social</span>
+        <a href="#" data-scramble>Instagram</a>
+        <a href="#" data-scramble>LinkedIn</a>
+        <a href="#" data-scramble>Behance</a>
+        <a href="#" data-scramble>YouTube</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Contato</span>
+        <a href="mailto:contato@objetivomarketing.com.br" data-scramble>contato@objetivomarketing.com.br</a>
+        <a href="tel:+5511999999999" data-scramble>+55 11 99999-9999</a>
+        <span>Av. Paulista, 1000 — São Paulo, BR</span>
+      </div>
+      <div class="footer__col footer__col--cta">
+        <span class="label">Newsletter</span>
+        <form class="footer__form" id="newsletter" novalidate>
+          <input type="email" placeholder="seu@email.com" aria-label="Seu e-mail" required />
+          <button type="submit" aria-label="Inscrever" data-magnetic>→</button>
+        </form>
+        <span class="footer__form-note" id="newsletter-note">Bons insights, zero spam.</span>
+      </div>
+    </div>
+
+    <div class="footer__brand" aria-hidden="true">
+      <span data-footer-mark>OBJETIVO</span>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Objetivo Marketing. Todos os direitos reservados.</span>
+      <button class="footer__top-btn" id="back-to-top" data-magnetic data-cursor="Topo">Voltar ao topo ↑</button>
+      <span>Acertamos o seu objetivo.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
