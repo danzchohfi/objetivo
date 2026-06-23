@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/',
+  // '/' for local/Vercel; '/objetivo/' when building for GitHub Pages (set via env)
+  base: process.env.BASE_PATH || '/',
   server: { host: true, port: 5173 },
   build: {
     target: 'es2020',
