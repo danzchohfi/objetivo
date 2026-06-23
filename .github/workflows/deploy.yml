@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    # default branch of the repo (GitHub Pages only deploys from the default branch)
+    branches: [main, claude/practical-carson-xaxwnx]
   workflow_dispatch:
 
 # Allow this workflow to publish to Pages
