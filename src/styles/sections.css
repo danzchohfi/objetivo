@@ -187,20 +187,31 @@
 @media (max-width: 880px) { .services__head { grid-template-columns: 1fr; gap: 1.2rem; } }
 
 .svc-list { border-top: 1px solid var(--line); }
-.svc { border-bottom: 1px solid var(--line); }
+.svc { position: relative; border-bottom: 1px solid var(--line); }
+/* growing lime accent bar on the left */
+.svc::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--flare);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--ease-out);
+}
 .svc__row {
   position: relative;
   display: grid;
   grid-template-columns: 80px minmax(220px, 1fr) 2fr auto;
   align-items: center;
   gap: 1.5rem;
-  padding: clamp(1.3rem, 3vw, 2.4rem) 0;
+  padding: clamp(1.3rem, 3vw, 2.4rem) clamp(0.5rem, 1.5vw, 1.4rem);
   transition: padding 0.5s var(--ease-out);
 }
 .svc__idx { font-family: var(--font-mono); font-size: var(--step--1); color: var(--bone-dim); transition: color 0.4s; }
 .svc__name {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--step-2);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -209,46 +220,28 @@
 .svc__desc { color: var(--bone-dim); font-size: var(--step-0); max-width: 40ch; transition: color 0.4s; }
 .svc__arrow {
   font-size: 1.6rem;
-  color: var(--bone-dim);
-  transform: translateX(-12px) rotate(-45deg);
+  color: var(--flare);
+  transform: translateX(-14px);
   opacity: 0;
-  transition: transform 0.5s var(--ease-out), opacity 0.4s, color 0.4s;
+  transition: transform 0.5s var(--ease-out), opacity 0.4s;
 }
 
-.svc.is-active .svc__row { padding-left: clamp(1rem, 2vw, 2rem); }
-.svc.is-active .svc__name { transform: translateX(12px); color: var(--svc-color, var(--flare)); }
-.svc.is-active .svc__idx { color: var(--svc-color, var(--flare)); }
-.svc.is-active .svc__arrow { opacity: 1; transform: translateX(0) rotate(0deg); color: var(--svc-color, var(--flare)); }
+/* clean CSS hover / keyboard focus — no floating tile */
+.svc__row:hover, .svc__row:focus-visible { padding-left: clamp(1rem, 2.4vw, 2.2rem); }
+.svc:hover::before, .svc:focus-within::before { transform: scaleY(1); transform-origin: top; }
+.svc__row:hover .svc__name,
+.svc__row:focus-visible .svc__name { transform: translateX(10px); color: var(--flare); }
+.svc__row:hover .svc__idx,
+.svc__row:focus-visible .svc__idx { color: var(--flare); }
+.svc__row:hover .svc__desc,
+.svc__row:focus-visible .svc__desc { color: var(--bone-2); }
+.svc__row:hover .svc__arrow,
+.svc__row:focus-visible .svc__arrow { opacity: 1; transform: translateX(0); }
 
 @media (max-width: 880px) {
   .svc__row { grid-template-columns: 44px 1fr auto; }
   .svc__desc { display: none; }
 }
-
-/* floating preview that follows cursor */
-.svc-preview {
-  position: fixed;
-  top: 0; left: 0;
-  width: clamp(220px, 22vw, 340px);
-  aspect-ratio: 4 / 3;
-  border-radius: 10px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 120;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8);
-  will-change: transform;
-}
-.svc-preview span {
-  position: absolute;
-  inset: 0;
-  background: var(--svc-color, var(--flare));
-  background-image:
-    radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,0.35), transparent 50%),
-    radial-gradient(100% 100% at 85% 90%, rgba(0,0,0,0.45), transparent 60%);
-  mix-blend-mode: normal;
-}
-html.is-touch .svc-preview { display: none; }
 
 /* ---------------- Process / Método ---------------- */
 .process { position: relative; }

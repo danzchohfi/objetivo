@@ -45,13 +45,13 @@
 /* ---------------- Logo tag "Marketing Online" ---------------- */
 .header__logo-tag {
   font-family: var(--font-sans);
-  font-size: 0.62rem;
-  line-height: 1;
+  font-size: 0.74rem;
+  line-height: 1.05;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--flare);
   text-transform: none;
-  margin-left: -0.2rem;
+  margin-left: -0.15rem;
 }
 @media (max-width: 520px) { .header__logo-tag { display: none; } }
 
@@ -246,3 +246,130 @@
 
 /* JS-driven height animation: collapsed by default when scripted */
 html.js .faq__item:not([open]) .faq__a { display: none; }
+
+/* ---------------- Modal: Solicitar atendimento ---------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal.is-open { visibility: visible; pointer-events: auto; }
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 4, 5, 0.72);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+.modal.is-open .modal__overlay { opacity: 1; }
+
+.modal__dialog {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--ink-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 22px;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.7);
+  transform: translateY(22px) scale(0.97);
+  opacity: 0;
+  transition: transform 0.5s var(--ease-out), opacity 0.4s var(--ease-out);
+}
+.modal.is-open .modal__dialog { transform: none; opacity: 1; }
+
+.modal__close {
+  position: absolute;
+  top: 1.1rem; right: 1.1rem;
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 11px;
+  color: var(--bone);
+  border: 1px solid var(--line);
+  background: rgba(250, 250, 247, 0.02);
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+.modal__close:hover { color: var(--flare); border-color: var(--flare); }
+
+.modal__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--bone);
+  padding-right: 3rem;
+}
+.modal__sub {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-1);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--bone);
+  margin: 0.8rem 0 1.6rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.field__label { font-size: var(--step-0); color: var(--bone); font-weight: 500; }
+.field__input {
+  width: 100%;
+  padding: 0.95em 1.1em;
+  border-radius: 12px;
+  background: #ECECEF;
+  color: #16161a;
+  border: 1.5px solid transparent;
+  font-size: var(--step-0);
+  font-family: var(--font-sans);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.field__input::placeholder { color: #8a8a90; }
+.field__input:focus {
+  outline: none;
+  border-color: var(--flare);
+  box-shadow: 0 0 0 3px rgba(198, 249, 77, 0.3);
+}
+.field__input.is-invalid {
+  border-color: #ff5d5d;
+  box-shadow: 0 0 0 3px rgba(255, 93, 93, 0.18);
+}
+
+.modal__submit {
+  width: 100%;
+  margin-top: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1.05em 1.4em;
+  border-radius: 12px;
+  background: var(--flare);
+  color: var(--on-flare);
+  font-weight: 700;
+  font-size: var(--step-0);
+  transition: background 0.3s var(--ease-out), opacity 0.3s;
+}
+.modal__submit:hover { background: var(--flare-2); }
+.modal__submit:disabled { opacity: 0.6; cursor: progress; }
+
+.modal__note {
+  margin-top: 0.9rem;
+  font-size: var(--step--1);
+  color: var(--bone-dim);
+  min-height: 1.2em;
+}
+.modal__note.is-ok { color: var(--flare); }
+.modal__note.is-err { color: #ff8585; }
+.modal__note a { color: var(--flare); border-bottom: 1px solid currentColor; }
+
+/* success state: hide the fields, keep the message */
+.modal__form.is-sent .field,
+.modal__form.is-sent .modal__submit { display: none; }

@@ -15,10 +15,10 @@ import { initNav } from './modules/nav.js';
 import { initReveals, revealHero } from './modules/reveals.js';
 import { initMarquees } from './modules/marquee.js';
 import { initCounters } from './modules/counters.js';
-import { initServices } from './modules/services.js';
 import { initWorks } from './modules/works.js';
 import { initQuotes } from './modules/quotes.js';
 import { initFaq } from './modules/faq.js';
+import { initForm } from './modules/form.js';
 import { initScramble } from './modules/scramble.js';
 import { initMisc } from './modules/misc.js';
 
@@ -80,6 +80,7 @@ function boot() {
   initMarquees(gsap, lenis);
   initQuotes();
   initFaq(gsap);
+  initForm(lenis);
   initScramble();
   initMisc(gsap, ScrollTrigger, lenis);
 
@@ -91,7 +92,6 @@ function boot() {
   fontsReady.then(() => {
     initReveals(gsap, ScrollTrigger);
     initCounters(gsap, ScrollTrigger);
-    initServices(gsap);
     initWorks(gsap, ScrollTrigger);
     ScrollTrigger.refresh();
   });

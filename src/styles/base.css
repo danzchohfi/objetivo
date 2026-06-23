@@ -48,7 +48,7 @@
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
   --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --header-h: 84px;
+  --header-h: 96px;
 }
 
 /* ---------------- Reset ---------------- */
